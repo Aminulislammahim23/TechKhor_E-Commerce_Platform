@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Page</title>
     <link rel="stylesheet" href="app/assets/css/index.css">
+    <link rel="stylesheet" href="app/assets/css/header.css">
+    <link rel="stylesheet" href="app/assets/css/footer.css">
     <script src="app/assets/js/index.js" defer></script>
 </head>
 <body>
