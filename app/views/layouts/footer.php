@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-content">
         <div class="container">
-            <!-- SUPPORT COLUMN -->
+            
             <div class="footer-section">
                 <h3>SUPPORT</h3>
                 <div class="support-item">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             
-            <!-- ABOUT US COLUMN -->
+            
             <div class="footer-section about-us">
                 <h3>ABOUT US</h3>
                 <div class="about-links">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             
-            <!-- STAY CONNECTED COLUMN -->
+            
             <div class="footer-section stay-connected">
                 <h3>STAY CONNECTED</h3>
                 <div class="company-info">
@@ -90,7 +90,7 @@
     </div>
 </footer>
 
-<!-- Utility Buttons -->
+
 <div class="utility-buttons">
     <div class="utility-btn compare-btn">
         <span class="btn-icon">◫</span>

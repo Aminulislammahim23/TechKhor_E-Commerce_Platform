@@ -142,7 +142,6 @@ footer {
     color: #ff7f4d;
 }
 
-/* Utility Buttons - Fixed position on right side */
 .utility-buttons {
     position: fixed;
     right: 20px;
