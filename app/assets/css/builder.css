@@ -1,0 +1,474 @@
+.builder-container {
+    background-color: #f5f7fa;
+    min-height: calc(100vh - 200px);
+    padding: 20px 0;
+}
+
+.builder-header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.utility-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.utility-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.utility-item:hover {
+    transform: translateY(-3px);
+}
+
+.utility-item .icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #ff6b35;
+}
+
+.utility-item span {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.builder-title {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.builder-title h1 {
+    color: #4a90e2;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.toggle-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4a90e2;
+}
+
+.toggle-option label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.builder-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.wattage-box {
+    background: white;
+    border: 2px solid #ff6b35;
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
+}
+
+.wattage-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ff6b35;
+    margin-bottom: 5px;
+}
+
+.wattage-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.items-button {
+    background: #4a90e2;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.items-button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+.components-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.component-item {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.component-item:last-child {
+    border-bottom: none;
+}
+
+.component-item:hover {
+    background: #f8f9fa;
+}
+
+.component-icon {
+    width: 60px;
+    height: 60px;
+    background: #e9ecef;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.component-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.component-label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.component-label span:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.required-badge {
+    background: #333;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    width: 200px;
+    max-width: 100%;
+}
+
+.choose-btn {
+    background: transparent;
+    border: 2px solid #4a90e2;
+    color: #4a90e2;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.choose-btn:hover {
+    background: #4a90e2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.floating-actions {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.action-button {
+    width: 70px;
+    height: 70px;
+    background: #333;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.compare-btn:hover {
+    background: #4a90e2;
+}
+
+.cart-btn:hover {
+    background: #ff6b35;
+}
+
+.button-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.button-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff6b35;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
+}
+
+.peripherals-header {
+    max-width: 1200px;
+    margin: 30px auto 20px;
+    padding: 0 20px;
+}
+
+.peripherals-header h2 {
+    background: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    display: inline-block;
+}
+
+.peripherals-section {
+    margin-top: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .utility-icons {
+        gap: 15px;
+    }
+    
+    .builder-title h1 {
+        font-size: 24px;
+    }
+    
+    .component-item {
+        padding: 20px;
+    }
+    
+    .component-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .builder-container {
+        padding: 15px 0;
+    }
+    
+    .utility-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .builder-title {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .builder-title h1 {
+        font-size: 22px;
+    }
+    
+    .builder-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .component-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+    
+    .component-info {
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    .component-label {
+        flex-wrap: wrap;
+    }
+    
+    .choose-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .peripherals-header {
+        margin: 25px auto 15px;
+        text-align: center;
+    }
+    
+    .peripherals-header h2 {
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+    
+    .floating-actions {
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .action-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .button-icon {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .utility-icons {
+        gap: 10px;
+    }
+    
+    .utility-item .icon {
+        font-size: 20px;
+    }
+    
+    .utility-item span {
+        font-size: 11px;
+    }
+    
+    .builder-title h1 {
+        font-size: 20px;
+    }
+    
+    .toggle-option {
+        padding: 8px 12px;
+    }
+    
+    .toggle-option label {
+        font-size: 12px;
+    }
+    
+    .wattage-box {
+        padding: 12px 20px;
+    }
+    
+    .wattage-value {
+        font-size: 24px;
+    }
+    
+    .items-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .component-item {
+        padding: 15px;
+    }
+    
+    .component-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .component-label span:first-child {
+        font-size: 16px;
+    }
+    
+    .choose-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
