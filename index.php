@@ -1,14 +1,25 @@
 <?php
+  session_start();
+  
+  
+  if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
+    session_destroy();
+    header('Location: ?page=home');
+    exit();
+  }
+  
+  
+  require_once './app/controllers/pageController.php';
   require_once './app/models/db.php';
   
   
   $connection = getConnection();
+  $controller = new PageController($connection);
   
-  if (!$connection) {
-   
-    require_once './app/views/error/500.php';
-    exit();
-  }
+  
+  $controller->handleRequest();
+  
+  
 ?>
 <?php require_once './app/views/layouts/header.php'; ?>
 
@@ -264,5 +275,6 @@
     ?>
     
     <script src="./app/assets/js/index.js"></script>
+    <script src="./app/assets/js/auth.js"></script>
 </body>
 </html>

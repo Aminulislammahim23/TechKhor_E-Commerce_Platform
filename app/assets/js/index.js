@@ -279,3 +279,20 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('img[data-src]').forEach(img => {
     imageObserver.observe(img);
 });
+
+// Account Dropdown Menu
+function initAccountDropdown() {
+    const accountDropdown = document.getElementById('accountDropdown');
+    
+    if (accountDropdown) {
+        accountDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Simple redirect approach for now
+            window.location.href = '?page=login';
+        });
+    }
+}
+
+// Initialize account dropdown
+document.addEventListener('DOMContentLoaded', initAccountDropdown);
