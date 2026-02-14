@@ -21,10 +21,19 @@
   
   
 ?>
-<?php require_once './app/views/layouts/header.php'; ?>
+<?php 
+require_once './app/views/layouts/header.php';
 
+// Show success message if registration was successful
+$registrationSuccess = isset($_GET['registration']) && $_GET['registration'] === 'success';
+?>
 <main>
-   
+    <?php if ($registrationSuccess && isset($_SESSION['user'])): ?>
+        <div style="background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 20px auto; max-width: 1200px; border-radius: 5px; text-align: center;">
+            <strong>🎉 Welcome <?php echo htmlspecialchars($_SESSION['user']['name']); ?>!</strong><br>
+            Your account has been created successfully. You are now logged in.
+        </div>
+    <?php endif; ?>
     <section class="hero-banner">
         <div class="banner-slider">
             <div class="slide active">

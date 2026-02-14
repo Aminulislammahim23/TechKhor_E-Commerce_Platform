@@ -1,4 +1,10 @@
-<?php require_once './app/views/layouts/header.php'; ?>
+<?php 
+require_once './app/views/layouts/header.php';
+
+// Initialize variables (will be set by PageController if there are errors)
+$errors = $errors ?? [];
+$formData = $formData ?? ['email' => ''];
+?>
 
 <div class="auth-wrapper">
 <div class="auth-container">
@@ -9,10 +15,10 @@
             <p>Sign in to your TechKhor account</p>
         </div>
         
-        <form class="auth-form" id="loginForm">
+        <form class="auth-form" id="loginForm" method="post" action="">
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <input type="email" id="email" name="email" required placeholder="Enter your email" value="<?php echo htmlspecialchars($formData['email']); ?>">
             </div>
             
             <div class="form-group">
@@ -34,6 +40,16 @@
             
             <button type="submit" class="btn-primary auth-btn">Sign In</button>
         </form>
+        
+        <?php if (!empty($errors)): ?>
+            <div class="form-group" style="text-align: center;">
+                <?php foreach ($errors as $error): ?>
+                    <div class="error-message" style="color: #e74c3c; background-color: #fdeded; padding: 10px; border-radius: 4px; margin: 5px 0; border: 1px solid #f5c6cb;">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
         
         <div class="auth-divider">
             <span>or</span>
@@ -69,18 +85,9 @@ function togglePassword(fieldId) {
         toggle.textContent = '👁️';
     }
 }
-
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Here you would typically send AJAX request to login endpoint
-    showNotification('Login functionality would be implemented here', 'info');
-});
 </script>
 
 </div>
 </div>
 
 <?php require_once './app/views/layouts/footer.php'; ?>
-    
-
-    

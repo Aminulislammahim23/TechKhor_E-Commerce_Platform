@@ -47,18 +47,27 @@
                         <p class="subtitle">Special Deals</p>
                     </div>
                 </a>
-                <a href="?page=login" class="nav-item" id="accountDropdown">
-                    <span>👤</span>
-                    <div>
-                        <p class="title">Account</p>
-                        <?php if (isset($_SESSION['user_id'])): ?>
-                            <p class="subtitle">My Account</p>
-                        <?php else: ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="?logout=true" class="nav-item" id="accountDropdown">
+                        <span>👤</span>
+                        <div>
+                            <p class="title"><?php echo htmlspecialchars($_SESSION['user']['name'] ?? 'User'); ?></p>
+                            <p class="subtitle">Logout</p>
+                        </div>
+                    </a>
+                <?php else: ?>
+                    <a href="?page=login" class="nav-item" id="accountDropdown">
+                        <span>👤</span>
+                        <div>
+                            <p class="title">Account</p>
                             <p class="subtitle">Register or Login</p>
-                        <?php endif; ?>
-                    </div>
-                </a>
+                        </div>
+                    </a>
+                <?php endif; ?>
                 <a href="?page=builder" class="pc-builder-btn">PC Builder</a>
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
+                    <a href="?page=admin" class="admin-panel-btn">Admin Panel</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

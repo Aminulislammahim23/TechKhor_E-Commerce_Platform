@@ -1,4 +1,15 @@
-<?php require_once './app/views/layouts/header.php'; ?>
+<?php 
+require_once './app/views/layouts/header.php';
+
+// Initialize variables (will be set by PageController if there are errors)
+$errors = $errors ?? [];
+$formData = $formData ?? [
+    'firstName' => '',
+    'lastName' => '',
+    'email' => '',
+    'phone' => ''
+];
+?>
 
 <div class="auth-wrapper">
 <div class="auth-container">
@@ -9,21 +20,21 @@
             <p>Join TechKhor today and unlock amazing deals!</p>
         </div>
         
-        <form class="auth-form" id="registerForm">
+        <form class="auth-form" id="registerForm" method="post" action="">
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                    <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name" value="<?php echo htmlspecialchars($formData['firstName']); ?>">
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                    <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name" value="<?php echo htmlspecialchars($formData['lastName']); ?>">
                 </div>
             </div>
             
             <div class="form-group">
                 <label for="regEmail">Email Address</label>
-                <input type="email" id="regEmail" name="email" required placeholder="Enter your email">
+                <input type="email" id="regEmail" name="email" required placeholder="Enter your email" value="<?php echo htmlspecialchars($formData['email']); ?>">
             </div>
             
             <div class="form-group">
@@ -51,7 +62,7 @@
             
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" value="<?php echo htmlspecialchars($formData['phone']); ?>">
             </div>
             
             <div class="form-options">
@@ -61,7 +72,7 @@
                     Subscribe to newsletter
                 </label>
                 <label class="checkbox-container">
-                    <input type="checkbox" name="terms" required>
+                    <input type="checkbox" name="terms" required id="terms">
                     <span class="checkmark"></span>
                     I agree to <a href="#" class="terms-link">Terms & Conditions</a>
                 </label>
@@ -69,6 +80,16 @@
             
             <button type="submit" class="btn-primary auth-btn">Create Account</button>
         </form>
+        
+        <?php if (!empty($errors)): ?>
+            <div class="form-group" style="text-align: center;">
+                <?php foreach ($errors as $error): ?>
+                    <div class="error-message" style="color: #e74c3c; background-color: #fdeded; padding: 10px; border-radius: 4px; margin: 5px 0; border: 1px solid #f5c6cb;">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
         
         <div class="auth-divider">
             <span>or</span>
@@ -92,38 +113,8 @@
 </div>
 </div>
 
-<script>
-function togglePassword(fieldId) {
-    const field = document.getElementById(fieldId);
-    const toggle = field.nextElementSibling;
-    if (field.type === 'password') {
-        field.type = 'text';
-        toggle.textContent = '🙈';
-    } else {
-        field.type = 'password';
-        toggle.textContent = '👁️';
-    }
-}
-
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const password = document.getElementById('regPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    
-    // Validate passwords match
-    if (password !== confirmPassword) {
-        showNotification('Passwords do not match!', 'error');
-        return;
-    }
-    
-    // Here you would typically send AJAX request to register endpoint
-    showNotification('Registration functionality would be implemented here', 'info');
-});
-</script>
-
-</div>
-</div>
-
 <?php require_once './app/views/layouts/footer.php'; ?>
+
+<script src="./app/assets/js/register.js"></script>
+</div>
+</div>
